@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ayaka</title>
+</head>
+
+<body>
+    <h1>Ayaka @PROJECT_VERSION@</h1>
+    <p>Ayaka is successfully working.</p>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>400 Bad Request</title>
+</head>
+
+<body>
+    <h1>400 Bad Request</h1>
+    <h2>Ayaka @PROJECT_VERSION@</h2>
+    <p>Your browser (or proxy) sent a request that this server could not understand.</p>
+</body>
+
+</html>

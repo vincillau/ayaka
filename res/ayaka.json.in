@@ -1,0 +1,20 @@
+{
+    "server": {
+        "listen": {
+            "type": "ipv4",
+            "ip": "127.0.0.1",
+            "port": 8080
+        },
+        "worker_threads": 4
+    },
+    "http": {
+        "mime": "@PROJECT_SOURCE_DIR@/res/mime.types"
+    },
+    "route": [
+        {
+            "type": "path",
+            "url": "/",
+            "path": "@PROJECT_SOURCE_DIR@/res/html/index.html"
+        }
+    ]
+}

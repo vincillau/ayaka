@@ -1,0 +1,12 @@
+.cache
+.idea
+.vscode
+build
+
+/res/html/400.html
+/res/html/404.html
+/res/html/405.html
+/res/html/index.html
+/res/ayaka.json
+/src/http_except.cpp
+/src/version.hpp

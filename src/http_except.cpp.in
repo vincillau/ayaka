@@ -1,0 +1,50 @@
+/**
+ * Copyright (C) 2022 Vincil Lau.
+ *
+ * Ayaka is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Ayaka is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with Ayaka. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+#include <memory>
+
+#include "http_except.hpp"
+
+namespace ayaka {
+
+namespace {
+
+const std::string kHtml400 = R"(@HTML_400@)";
+const std::string kHtml404 = R"(@HTML_404@)";
+const std::string kHtml405 = R"(@HTML_405@)";
+
+}  // namespace
+
+void Http400Except::SetUp(std::shared_ptr<Response> resp) const {
+  resp->set_status(std::move(HttpStatus::BadRequest()));
+  resp->body() =
+      std::make_shared<std::vector<char>>(kHtml400.begin(), kHtml400.end());
+}
+
+void Http404Except::SetUp(std::shared_ptr<Response> resp) const {
+  resp->set_status(std::move(HttpStatus::NotFound()));
+  resp->body() =
+      std::make_shared<std::vector<char>>(kHtml404.begin(), kHtml404.end());
+}
+
+void Http405Except::SetUp(std::shared_ptr<Response> resp) const {
+  resp->set_status(std::move(HttpStatus::MethodNotAllowed()));
+  resp->body() =
+      std::make_shared<std::vector<char>>(kHtml405.begin(), kHtml405.end());
+}
+
+}  // namespace ayaka
